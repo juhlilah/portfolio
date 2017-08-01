@@ -1,55 +1,652 @@
-<html>
-
+<!--
+ 
+percentage
+(c) sceawung
+2015
+ 
+--
+ 
+do not remove my credits. do not alter and/or redistribute. by using my codes, you agree to the terms of use.
+ 
+-->
+ 
+<!DOCTYPE html>
+ 
 <head>
-    <style>
-        h1,
-        h2 {
-            text-shadow: 2px 2px #C3BAAA;
-            text-align: left;
-            color: black;
-            height: 20px;
-        }
-        
-        body {
-            background-color: #FAF8D4;
-            font-family: "Times New Roman", Times, serif;
-            text-indent: 25px;
-            color: black;
-        }
-        
-        div {
-            background-color: transparent;
-            width: 450px;
-            border: 2px solid gray;
-            padding: 50px;
-            margin: 50px;
-        }
-        
-        .left {
-            float: left;
-            margin: 0 0 10px 10px;
-        }
-        
-        .right {
-            float: right;
-            margin: 0 0 10px 10px;
-        }
-    </style>
+ 
+ 
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+{block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+ 
+<meta name="color:background" content="#F7F7F7" />
+<meta name="color:borders" content="#EEEEEE" />
+<meta name="color:link" content="#AAAAAA" />
+<meta name="color:link hover" content="#9CE6FF" />
+<meta name="color:posts" content="#FFFFFF" />
+<meta name="color:text" content="#777777" />
+<meta name="color:title" content="#000000" />
+<meta name="color:title text" content="#FFFFFF" />
+ 
+<meta name="if:captions" content="1" />
+ 
+<meta name="image:background" content="" />
+<meta name="image:sidebar" content="http://40.media.tumblr.com/1ab6e2274e49b58744d744c80e33af7b/tumblr_ndy5wiVK3N1qhdj0bo1_1280.jpg" />
+ 
+<meta name="select:font" content="Inconsolata" title="inconsolata" />
+<meta name="select:font" content="Karla" title="karla" />
+<meta name="select:font" content="Mako" title="mako"/>
+<meta name="select:font" content="PT Sans" title="pt sans" />
+<meta name="select:font" content="Source Sans Pro" title="source sans pro" />
+<meta name="select:post size" content="250" title="250px" />
+<meta name="select:post size" content="300" title="300px" />
+<meta name="select:post size" content="350" title="350px" />
+<meta name="select:post size" content="400" title="400px" />
+ 
+<meta name="text:link 1" content="link one">
+<meta name="text:link 1 url" content="http://">
+<meta name="text:link 2" content="link two">
+<meta name="text:link 2 url" content="http://">
+ 
+<link href='http://fonts.googleapis.com/css?family={select:font}:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+ 
+<link href="http://static.tumblr.com/qudkd6d/OcDnl99gb/style.css" rel="stylesheet" type="text/css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+ 
+<script src ="//static.tumblr.com/fwgzvyf/l6jnyutne/shythemes.vr.js"></script>
+ 
+<script>
+$(document).ready(function() {
+$('a.note').click(function() {
+$('.x').fadeToggle(400);
+});
+$('.tt').click(function() {
+$('modal').fadeOut(400);
+});
+});    
+</script>    
+ 
+<script>
+// video resizing script by shythemes
+$(document).ready(function(){
+resizeVideos();
+});
+function resizeVideos() {
+$('.video iframe:not(.tumblr_video_iframe)').each(function(){
+var vw = $(this).width();
+var vh = $(this).height();
+var scale = $(this).parents('.video').width() / vw;
+$(this).attr({
+width: Math.floor($(this).attr('width') * scale),
+height: Math.floor($(this).attr('height') * scale)
+});
+});
+$('.tumblr_video_iframe').each(function(){
+var vw = $(this).width();
+var vh = $(this).height();
+var scale = $(this).parents('.video').width() / vw;
+$(this).css({
+'transform': 'scale(' + scale + ')',
+'margin': vh * (scale - 1) / 2 + 'px ' + vw * (scale - 1) / 2 + 'px'
+});
+$(this).parents('.tumblr_video_container').css({
+width: Math.floor(vw * ( scale + 1 ) / 2),
+height: Math.floor(vh * ( scale + 1 ) / 2)
+});
+});
+}
+</script>
+ 
+<script src="http://static.tumblr.com/qudkd6d/Az6nkemqr/pxuphotoset.min.js"></script>
+ 
+<script>
+$(document).ready(function(){
+$('.photo-slideshow').pxuPhotoset({
+lightbox: true,
+rounded: false,
+gutter: '2px',
+photoset: '.photo-slideshow',
+photoWrap: '.photo-data',
+photo: '.pxu-photo'
+});
+});        
+ 
+</script>
+ 
+<script src="http://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+ 
+<script>
+(function($){
+$(document).ready(function(){
+$("[title]").style_my_tooltips({
+    tip_follows_cursor:true,
+    tip_delay_time:0,
+    tip_fade_speed:300
+}
+);
+});
+})(jQuery);
+</script>
+ 
+ 
+<style type="text/css">
+ 
+.iframe-controls--desktop {
+top:10px!important;
+right:10px!important;
+opacity:.3!important;
+position:fixed!important;
+white-space:nowrap!important;
+-webkit-filter:invert(100%)!important;
+-moz-filter:invert(100)!important;
+-ms-filter:invert(100%)!important;
+-o-filter:invert(100%)!important;
+filter:invert(100)!important;
+}
+ 
+.tmblr-lightbox {background:({RGBcolor:background}, .9)!important;}
+.vignette {opacity:0!important;}
+ 
+.lightbox-caption {
+color:inherit!important;
+font-family:inherit!important;
+font-size:inherit!important;
+font-weight:normal!important;
+text-shadow:none!important;  
+}
+ 
+.lightbox-image {
+border-radius:0px!important;
+-webkit-border-radius:0px!important;
+-moz-border-radius:0px!important;
+box-shadow:none!important;
+-webkit-box-shadow:none!important;
+-moz-box-shadow:none!important;
+}
+ 
+::-webkit-scrollbar {
+height:9px;
+width:9px;
+background:#ccc;
+ 
+}
+::-webkit-scrollbar-track-piece {background-color:{color:posts};}
+::-webkit-scrollbar-thumb {background:{color:borders};}
+ 
+::selection {
+background:{color:borders};
+color:{color:text};
+}
+ 
+::-moz-selection {
+background:{color:borders};
+color:{color:text};
+}
+ 
+#s-m-t-tooltip{
+margin:20px;
+z-index:9999;
+background:#fff;
+font-size:8px;
+text-transform:uppercase;
+letter-spacing:1px;
+padding:1px 5px;
+color:{color:text};
+max-width:350px;
+box-shadow:2px 2px #eee;
+}
+ 
+body {
+background-color:{color:background};
+background-image:url('{image:background}');
+background-attachment:fixed;
+background-repeat:repeat;
+cursor:default;
+font-family:'{select:font}';
+font-size:10px;
+line-height:1.1rem;
+word-wrap:break-word;
+-ms-text-size-adjust:100%;
+-webkit-text-size-adjust:100%;
+text-size-adjust:100%;
+}
+ol li {list-style-type:decimal-leading-zero;}
+ 
+a {
+cursor:help;
+text-decoration:none;
+transition:all 0.5s ease-in-out;
+-moz-transition:all 0.5s ease-in-out;
+-o-transition:all 0.5s ease-in-out;
+-webkit-transition:all 0.5s ease-in-out;
+}
+ 
+a:hover {
+transition:all 0.5s ease-in-out;
+-moz-transition:all 0.5s ease-in-out;
+-o-transition:all 0.5s ease-in-out;
+-webkit-transition:all 0.5s ease-in-out;
+}
+ 
+a img, img a {margin:0; padding:0; border:none;}
+ 
+h1, h2, h3, h4, h5, h6 {
+font-size:1.25em;
+font-weight:700;
+}
+ 
+p {
+margin:5px 0;
+}
+p:first-of-type {margin-top:0; padding-top:0;}
+p:last-of-type {margin-bottom:0; padding-bottom:0;}
+ 
+ul {
+margin:0;
+padding:0;
+}
+ 
+ul li {
+list-style-type:none;
+padding:0 0 0 15px;
+position:relative;
+}
+ul li:before {content:url('http://static.tumblr.com/3yblkz0/T3An46s86/crss.png'); display:block; position:absolute; left:0; top:0; vertical-align:top;}
+ 
+aside {
+position:fixed;
+left:15%;
+top:160px;
+width:140px;
+}
+ 
+.title {
+background-color:{color:title};
+color:{color:title text};
+letter-spacing:2px;
+margin-top:-6px;
+padding:5px 10px;
+text-transform:uppercase;
+}
+ 
+.desc {
+border-bottom:1px solid {color:borders};
+margin-bottom:10px;
+padding-bottom:10px;
+}
+.desc a {color:{color:link};}
+.desc a:hover {color:{color:link hover};}
+ 
+nav {
+background-color:{color:posts};
+border-bottom:1px solid {color:borders};
+color:{color:text};
+margin-top:5px;
+padding:10px;
+}
+ 
+.links {
+font-size:8px;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+.links a {color:{color:link}; display:block;}
+ 
+.box {
+background-color:transparent;
+border:1px solid {color:borders};
+margin-top:4px;
+width:6px;
+height:6px;
+}
+.left {float:left; margin-right:7px;}
+.right {float:right; margin-left:7px;}
+ 
+.links a:hover .box, .pinfo a:hover .box, .tags a:hover .box {
+content:url('http://static.tumblr.com/3yblkz0/T3An46s86/crss.png');
+}
+ 
+section {
+margin:100px auto;
+width:{select:post size}px;
+}
+ 
+article {
+color:{color:text};
+margin:100px 0;
+width:{select:post size}px;
+}
+article a {color:{color:link};}
+article a:hover {color:{color:link hover};}
+article small, article sub {font-size:10px;}
+ 
+.cap {
+background-color:{color:posts};
+border-bottom:1px solid {color:borders};
+padding:10px 10px 0;
+}
+ 
+.cap blockquote {
+border-left:1px solid {color:borders};
+margin:0;
+padding-left:10px;
+}
+.cap blockquote blockquote {margin-left:5px;}
+.cap *, .cap blockquote * {max-width:100%; height:auto;}
+ 
+.text.none {display:none!important;}
+ 
+ul.chat {
+margin:0;
+padding:0;
+}
+ 
+ul.chat li {
+list-style-type:none;
+padding:0 0 0 15px;
+position:relative;
+}
+ul.chat li:before {content:url('http://static.tumblr.com/3yblkz0/T3An46s86/crss.png'); display:block; position:absolute; left:0; top:0; vertical-align:top;}
+ 
+.quote {
+font-size:11px;
+font-style:italic;
+}
+ 
+.tt {
+background-color:{color:title};
+color:{color:title text};
+letter-spacing:2px;
+margin-bottom:5px;
+padding:5px 10px;
+text-transform:uppercase;
+}
+.tt a:hover {color:{color:link hover};}
+ 
+.text {
+border-bottom:1px solid {color:borders};
+padding-bottom:10px;
+}
+ 
+.text blockquote {
+border:none;
+margin:0;
+padding-left:30px;
+}
+.text blockquote:before {content:""; width:20px; height:1px; background-color:{color:borders}; position:absolute; margin-top:9px; margin-left:-30px;}
+ 
+.pinfo {
+font-size:8px;
+letter-spacing:1px;
+padding-bottom:10px;
+text-align:left;
+text-transform:uppercase;
+}
+.pinfo a {display:inline-block; text-align:right; width:25%;}
+.pinfo a:hover {color:{color:link};}
+.pinfo a:first-of-type {text-align:left; width:46%;}
+ 
+.per {padding-bottom:10px;}
+.tags a {display:inline-block; font-size:8px; letter-spacing:1px; text-transform:uppercase;}
+.tags a:hover {color:{color:link};}
+ 
+.b {color:{color:title}; font-size:9px; font-weight:700;}    
+.border {border-bottom:1px solid {color:borders}; margin-bottom:10px; padding-bottom:10px;}
+ 
+table.au {
+width:{select:post width}px;
+}
+table.au td {background-color:{color:title};}
+table.au:hover .ex {opacity:.75;}
+ 
+td.play {
+background-size:cover;
+height:75px;
+overflow:hidden;
+width:75px;
+}
+ 
+.ex {
+background-color:{color:title};
+opacity:0;
+overflow:hidden;
+height:75px;
+width:75px;
+transition:all 0.5s ease-in-out;
+-moz-transition:all 0.5s ease-in-out;
+-o-transition:all 0.5s ease-in-out;
+-webkit-transition:all 0.5s ease-in-out;
+}
+ 
+.player {
+margin:23px 25px;
+overflow:hidden;
+width:25px;
+}
+ 
+td.ainfo {
+color:{color:link};
+padding:10px;
+width:100%;
+}
+.trackname {color:{color:title text}; letter-spacing:2px; text-transform:uppercase;}
+ 
+footer {
+background-color:{color:title};
+color:{color:link};
+font-size:8px;
+letter-spacing:1px;
+margin:100px 0;
+padding:10px;
+text-align:right;
+text-transform:uppercase;
+}
+footer a {color:{color:title text}; margin:0 5px;}
+ 
+table.foot {
+background-color:{color:title};
+font-size:8px;
+letter-spacing:1px;
+margin-top:-95px;
+text-align:center;
+text-transform:uppercase;
+width:100%;
+}
+ 
+table.foot td {padding:10px; width:33%;}
+table.foot td a {color:{color:title text};}
+ 
+modal {
+background-color:{color:background};
+display:none;
+position:fixed;
+left:0;
+top:0;
+right:0;
+bottom:0;
+width:100vw;
+height:100vh;
+z-index:999;
+}
+ 
+.win {
+position:absolute;
+top:50vh;
+left:50vw;  
+z-index:9999;
+width:{select:post width}px;
+transform: translate(-50%,-50%);
+-webkit-transform: translate(-50%,-50%);
+-o-transform: translate(-50%,-50%);
+-moz-transform: translate(-50%,-50%);    
+}
+.win > .cap {max-height:300px; overflow-x:auto;}
+ 
+.close {
+content:url('http://static.tumblr.com/3yblkz0/T3An46s86/crss.png');
+padding:5px;
+position:absolute;
+right:0px;
+}
+.close:hover {cursor:help;}
+ 
+ol.notes {
+margin:0;
+padding:0;
+}
+ol.notes a {color:{color:link};}
+ol.notes a:hover {color:{color:link hover};}
+ol.notes li.note {list-style-type:none;}
+ol.notes li.note img.avatar, ol.notes li.note blockquote {display:none;}
+ 
+.cr {
+font-family:calibri;
+font-size:10px;
+letter-spacing:1px;
+position:fixed;
+bottom:20px;
+right:20px;
+text-transform:uppercase;
+}
+.cr a {color:#777; border-bottom:1px solid #88d8c0;}
+ 
+{CustomCSS}
+</style>
+ 
 </head>
-
+ 
 <body>
-    <div class="left">
-        <p> Put picture here.</p>
-    </div>
-    <div class="right">
-        <h1> JAHLILA </h1>
-        <p> <b> 1052 CLAY AVENUE </p>
-        <p> BRONX, NY 10456 </p>
-        <p> EMAIL: SJAHLILA@GMAIL.COM </p>
-    <p> TELEPHONE: 347-490-0997 </b> </p>
-    </div>
-    <b><p> BIO: </p></b>
-    <p> I am hungry. </p>
+ 
+ 
+<aside>
+<img src="{image:sidebar}" width="100%"/>
+<div class="title">{Title}</div>
+<nav>
+<div class="desc">{Description}</div>
+<div class="links">
+<a href="/"><div class="box left"></div> index</a>
+<a href="/ask"><div class="box left"></div> message</a>
+<a href="/archive"><div class="box left"></div> archive</a>
+<a href="{text:link 1 url}"><div class="box left"></div> {text:link 1}</a>
+<a href="{text:link 2 url}"><div class="box left"></div> {text:link 2}</a>
+</div>
+</nav>
+</aside>
+ 
+ 
+<section>
+{block:Posts}
+<article>
+ 
+{block:Answer}
+<div class="tt">from {Asker}:</div>
+{/block:Answer}
+ 
+{block:Audio}
+{block:AudioPlayer}
+<table class="au" cellpadding="0" cellspacing="0"><tr><td class="play" style="{block:AlbumArt}background-image:url({AlbumArtURL});{/block:AlbumArt}"><div class="ex"><div class="player">{AudioPlayerBlack}</div></div></td><td class="ainfo">{block:TrackName}<span class="trackname">{TrackName}</span>{/block:TrackName}{block:Artist}<br>by {Artist}{/block:Artist}</td></tr></table>
+{/block:AudioPlayer}
+{/block:Audio}
+ 
+{block:Chat}
+{block:Title}<div class="tt">{Title}</div>{/block:Title}
+{/block:Chat}
+ 
+{block:Link}
+<div class="tt"><a href="{URL}">{Name}</a></div>
+{/block:Link}    
+ 
+{block:Photo}
+<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{select:post size}px" style="display:block;"/>
+{/block:Photo}
+ 
+{block:Photoset}
+<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>
+{/block:Photoset}
+ 
+{block:Quote}
+<div class="tt">{Source}</div>
+{/block:Quote}
+ 
+{block:Text}
+{block:Title}<div class="tt">{Title}</div>{/block:Title}
+{/block:Text}
+ 
+{block:Video}
+<div class="video">{Video-500}</div>
+{/block:Video}    
+ 
+<div class="cap">
+ 
+{block:Answer}
+<div class="quote border">{Question}</div>
+<div class="border">{Answer}</div>
+{/block:Answer}
+ 
+{block:Chat}
+<div class="border">
+<ul class="chat">
+{block:Lines}<li>{block:Label}<b>{Label}</b>{/block:Label} {Line}{/block:Lines}
+</ul>
+</div>
+{/block:Chat}
+ 
+{block:Link}{block:Description}<div class="border">{Description}</div>{/block:Description}{/block:Link}
+ 
+{block:Quote}<div class="quote border">&quot;{Quote}&quot;</div>{/block:Quote}
+{block:Text}<div class="border">{Body}</div>{/block:Text}
+{block:Caption}<div class="text border {block:ifnotcaptions}none{/block:ifnotcaptions}">{Caption}</div>{/block:Caption}
+ 
+{block:Date}
+{block:IndexPage}
+<div class="pinfo"><a href="{Permalink}" class="b">{DayOfMonth}.{MonthNumberWithZero}</a> <a href="" title="{block:Tags}#{Tag} {/block:Tags}"><div class="box right"></div> tags</a> <a href="{ReblogURL}"><div class="box right"></div> reblog</a></div>
+{/block:IndexPage}
+{block:PermalinkPage}
+<div class="per">Posted on {DayOfWeek}, {ShortMonth} {DayOfMonth}{DayOfMonthSuffix}{block:RebloggedFrom}<br>via <a href="{ReblogParentURL}">{ReblogParentName}</a>, originally by <a href="{ReblogRootURL}">{ReblogRootName}</a>{/block:RebloggedFrom}{block:HasTags}<br><div class="tags">{block:Tags}<a href="{TagURL}" ><div class="box left"></div> {Tag}</a>&emsp;{/block:Tags}</div>{/block:HasTags}</div>
+{/block:PermalinkPage}
+{/block:Date}
+ 
+</div>    
+ 
+{block:ContentSource}
+<!-- {SourceURL}{block:SourceLogo}<img src="{BlackLogoURL}"width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}
+{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo} -->
+{/block:ContentSource}
+ 
+</article>
+ 
+{block:PermalinkPage}
+{block:PermalinkPagination}
+<table class="foot" width="{select:post width}px" cellpadding="0" cellspacing="0"><tr>
+{block:PreviousPost}<td><a href="{PreviousPost}">older post</a></td>{/block:PreviousPost}
+{block:PostNotes}<td><a class="note">view notes</a></td>{/block:PostNotes}
+{block:NextPost}<td><a href="{NextPost}">newer post</a></td>{/block:NextPost}
+</tr></table>
+{/block:PermalinkPagination}
+{/block:PermalinkPage}
+ 
+{block:PostNotes}<modal class="x"><div class="win"><div class="tt">(close)</div><div class="cap">{PostNotes-16}</div></div></modal>{/block:PostNotes}
+ 
+{/block:Posts}
+ 
+{block:Pagination}
+<footer>
+<div style="float:left;">page {CurrentPage} of {TotalPages}</div>
+{block:PreviousPage}<a href="{PreviousPage}">prev</a>{/block:PreviousPage}
+{block:NextPage}<a href="{NextPage}">next</a>{/block:NextPage}
+</footer>
+{/block:Pagination}
+</section>
+ 
+<div class="cr"><a href="http://sceawung.tumblr.com" title="theme by sceawung">@</a></div>
+ 
 </body>
+<!-- SCM Music Player http://scmplayer.co -->
+<script type="text/javascript" src="http://scmplayer.co/script.js" 
+data-config="{'skin':'http://static.tumblr.com/d41lcii/7Ysmre077/simplegray.css','volume':50,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'I Don%27t Wanna Love You - Krystal x Kim Joon Won','url':'https://youtu.be/yVUT4Ryq5nI'},{'title':'Where U Are - Rina Sawayama','url':'https://youtu.be/RQUFRskvoPM'},{'title':'On And On - Hoody','url':'https://youtu.be/8z4VUQpYp8o'},{'title':'Body Talk - Red Velvet','url':'https://youtu.be/kvo4K0R1c9Y'}]}" ></script>
+<!-- SCM Music Player script end -->
 
+
+ 
 </html>
